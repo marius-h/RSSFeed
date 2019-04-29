@@ -1,0 +1,11 @@
+<mat-list class="list-content" *ngIf="feed !== undefined">
+  <app-newscard
+    *ngFor="let i of feed.item"
+    [title]="i.title"
+    [description]="i.description"
+    [enclosure]="(i.enclosure !== null || i.enclosure !== undefined) ? i.enclosure : undefined"
+    [pubDate]="i.pubDate"
+    [link]="i.link"
+    class="list-items"
+  ></app-newscard>
+</mat-list>

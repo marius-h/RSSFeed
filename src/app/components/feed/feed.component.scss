@@ -1,0 +1,19 @@
+.spacer {
+  flex: 1 1 auto;
+}
+
+.list-items {
+  align-content: space-around;
+  padding: 10em;
+  margin: auto;
+}
+
+.list-content {
+  //display: flex;
+  margin: auto;
+  justify-content: center;
+}
+
+.mat-list-icon {
+  color: rgba(0, 0, 0, 0.54);
+}

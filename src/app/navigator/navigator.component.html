@@ -1,0 +1,57 @@
+<!--suppress JSIgnoredPromiseFromCall -->
+<mat-toolbar
+  color="primary"
+  class="mat-toolbar"
+>
+  <button
+    mat-icon-button
+    (click)="drawer.toggle()"
+  >
+    <mat-icon>menu</mat-icon>
+  </button>
+  <img
+    [src]="'https://www.spiegel.de/static/sys/logo_120x61.gif'"
+    height="32"
+  >
+  <h1>Nachrichten</h1>
+</mat-toolbar>
+
+<mat-sidenav-container
+  class="sidenav-container"
+>
+  <mat-sidenav
+    #drawer
+    class="sidenav"
+    [fixedInViewport]="(isHandset$ | async)"
+    [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+    [mode]="(isHandset$ | async) ? 'over' : 'side'"
+    [opened]="!(isHandset$ | async)"
+    fixedTopGap="56"
+  >
+    <mat-nav-list disableRipple="true">
+      <a
+        mat-list-item
+        *ngFor="let g of general"
+        [routerLink]="g.link"
+        routerLinkActive="item-active"
+      >
+        <mat-icon mat-list-icon [svgIcon]="g.icon"></mat-icon>
+        {{g.title}}
+      </a>
+      <mat-divider></mat-divider>
+      <a
+        mat-list-item
+        *ngFor="let categorie of categories"
+        [routerLink]="categorie.link"
+        routerLinkActive="item-active"
+      >
+        <mat-icon mat-list-icon [svgIcon]="categorie.icon"></mat-icon>
+        {{categorie.title}}
+      </a>
+    </mat-nav-list>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>
