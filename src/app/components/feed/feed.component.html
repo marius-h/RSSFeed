@@ -1,5 +1,5 @@
 <mat-list class="list-content" *ngIf="feed !== undefined">
-  <app-newscard
+  <app-feed-item
     *ngFor="let i of feed.item"
     [title]="i.title"
     [description]="i.description"
@@ -7,5 +7,5 @@
     [pubDate]="i.pubDate"
     [link]="i.link"
     class="list-items"
-  ></app-newscard>
+  ></app-feed-item>
 </mat-list>

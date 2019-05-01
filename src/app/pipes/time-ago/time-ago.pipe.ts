@@ -5,6 +5,8 @@ import { Pipe, PipeTransform, NgZone, ChangeDetectorRef, OnDestroy } from '@angu
   pure: false
 })
 /**
+ * @description Pipe for displaying how up-to-date an item in the feed is
+ * @author AndrewPoyntz, Marius Höfler
  * @see https://github.com/AndrewPoyntz/time-ago-pipe/blob/master/time-ago.pipe.ts
  */
 export class TimeAgoPipe implements PipeTransform, OnDestroy {

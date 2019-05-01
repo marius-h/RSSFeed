@@ -2,12 +2,12 @@ import { Component, Input, OnInit } from '@angular/core';
 import { Enclosure, FeedItem } from '../feed/feed-item.model';
 
 @Component({
-  selector: 'app-newscard',
-  templateUrl: './newscard.component.html',
-  styleUrls: ['./newscard.component.scss']
+  selector: 'app-feed-item',
+  templateUrl: './feed-item.component.html',
+  styleUrls: ['./feed-item.component.scss']
 })
 
-export class NewscardComponent implements OnInit, FeedItem {
+export class FeedItemComponent implements OnInit, FeedItem {
   @Input() author: string;
   @Input() category: string;
   @Input() comments: string;
